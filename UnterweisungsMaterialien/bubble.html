@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blasen Animation</title>
+    <style>
+        @keyframes bubble-rise-slow {
+            0% { bottom: 0; opacity: 1; }
+            100% { bottom: 100%; opacity: 0; }
+        }
+        @keyframes bubble-rise-medium {
+            0% { bottom: 0; opacity: 1; }
+            100% { bottom: 100%; opacity: 0; }
+        }
+        @keyframes bubble-rise-fast {
+            0% { bottom: 0; opacity: 1; }
+            100% { bottom: 100%; opacity: 0; }
+        }
+        .bubble {
+            position: absolute;
+            border-radius: 50%;
+        }
+        .bubble-slow {
+            animation: bubble-rise-slow 6s linear infinite;
+            background-color: rebeccapurple;
+            width: 15px;
+            height: 15px;
+            left: 40%;
+        }
+        .bubble-slow2 {
+            animation: bubble-rise-slow 6s linear infinite;
+            background-color: rebeccapurple;
+            width: 15px;
+            height: 15px;
+            left: 60%;
+        }
+        .bubble-medium {
+            animation: bubble-rise-medium 4s linear infinite;
+            background-color: royalblue;
+            width: 30px;
+            height: 30px;
+            left: 30%;
+        }
+        .bubble-medium2 {
+            animation: bubble-rise-medium 4s linear infinite;
+            background-color: royalblue;
+            width: 30px;
+            height: 30px;
+            left: 70%;
+        }
+        .bubble-fast {
+            animation: bubble-rise-fast 2s linear infinite;
+            background-color: orangered;
+            width: 45px;
+            height: 45px;
+            left: 20%;
+        }
+        .bubble-fast2 {
+            animation: bubble-rise-fast 2s linear infinite;
+            background-color: orangered;
+            width: 45px;
+            height: 45px;
+            left: 80%;
+        }
+
+        .bubble-fast3 {
+            animation: bubble-rise-fast 2s linear infinite;
+            background-color: orangered;
+            width: 45px;
+            height: 45px;
+            left: 50%;
+        }
+    </style>
+</head>
+<body>
+    <div class="bubble bubble-slow"></div>
+    <div class="bubble bubble-medium"></div>
+    <div class="bubble bubble-fast"></div>
+    <div class="bubble bubble-slow2"></div>
+    <div class="bubble bubble-medium2"></div>
+    <div class="bubble bubble-fast2"></div>
+    <div class="bubble bubble-fast3"></div>
+</body>
+</html>
+
+
+
+
+
+
+

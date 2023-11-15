@@ -1,0 +1,145 @@
+%*******************************************************************************
+%                                                                              *
+%                 Datei: header.tex                                            *
+%                                                                              *
+%                 Stand: 10.10.2013   11.02 Uhr   (Elt)                        *
+%                                                                              *
+%*******************************************************************************
+
+\documentclass[%
+    paper=a4,            % Layout fuer Din A4
+    %oneside,          % einseitiger Druck
+	twoside,             % Layout fuer beidseitigen Druck
+    fontsize=12pt,       % Schriftgroesse 12pt
+    %openright,        % Kapitel dÃ¼rfen nur auf einer rechten Seite beginnen
+    openany,          % Kapitel dÃ¼rfen rechts oder links beginnen
+    halfparskip,      % eine halbe Zeile Abstand zw. AbsÃ¤tzen
+    headsepline,         % horizontale Linie unter Kolumnentitel
+    headinclude,         % Kopfzeile wird Seiten-Layouts mit beruecksichtigt
+    plainheadsepline,    % horizontale Linie auch beim plain-Style
+    %footsepline,      % FuÃzeilenlinie
+    parskip=half,        % Absatzabstand statt Absatzeinzu
+    bibliography=totoc,  % Literaturverz. wird ins Inhaltsverzeichnis eingetragen
+    %idxtotoc,          % Index im Inhaltsverzeichnis
+    listof=totoc,        % Abbildungs und TabellenVZ ins InhaltsVZ
+    ]{scrbook}
+
+
+\usepackage{longtable}
+\usepackage{titlesec}% Ändert die Größe der Überschriften subsubsection
+%\titleformat*{\subsubsection}{\large\bfseries}
+
+\usepackage[utf8]{inputenc}
+\usepackage{titleref}
+% deutsche Silbentrennung etc.
+\usepackage[ngerman]{babel}      % neue Rechtschreibung
+
+%schriftarten
+\usepackage[T1]{fontenc}
+\newcommand{\changefont}[3]{\fontfamily{#1} \fontseries{#2} \fontshape{#3} \selectfont}
+
+%abkürzungsverzeichnis
+\usepackage[printonlyused, footnote, nohyperlinks]{acronym}
+%\usepackage{glossaries}
+
+%\usepackage{natbib}
+\usepackage[square,sort,comma,numbers]{natbib}
+
+%fußnote nummerierung durchgehen
+\usepackage{chngcntr} 
+\counterwithout{footnote}{chapter}
+
+% Grafiken: PDF, GIF, PNG
+\usepackage{graphicx}
+\usepackage{subfigure}
+\usepackage{pdfpages}
+\usepackage{float}
+\usepackage{wrapfig}
+
+
+%tür tabellen
+%\usepackage{booktabs}
+
+% Farben
+\usepackage{color}
+\definecolor{link_color}{rgb}{0,0,0.6}
+\definecolor{ListingBG}{rgb}{0.95,0.95,0.95}
+
+% Hyperlinks (anklickbar im PDF)
+\usepackage[%
+    pdftitle={Sortieralgorithmus Bubblesort},%
+    pdfauthor={Nick Koslowski},%
+    pdfpagemode=UseOutlines
+]{hyperref}   
+
+\usepackage{blindtext}
+    
+\hypersetup {
+     breaklinks = {true},      % Erlaubt Zeilenumbrüche in Links
+     colorlinks = {true},      % Benutze farbige Links
+     citecolor = {link_color}, % Farbe für Zitate
+     linkcolor = {link_color}, % beeinflusst Inhaltsverz. und Seitenzahlen
+     urlcolor = {link_color},  % Weblink-Farbe
+     pdftitle = {Sortieralgorithmus Bubblesort}, % Titel der Arbeit
+     pdfsubject = {Unterweisungsentwurf}, % Thema der Arbeit
+     pdfauthor = {Nick Koslowski},  % AutorIN der Arbeit
+     pdfkeywords = {Hier ein paar Stichwörter}, % Stichwörter zur Arbeit
+     pdfproducer = {pdfLaTeX}, % Erzeugt durch
+     pdfcreator = {MacTeX},    % Erstellt mit
+     pdfstartview = {FitV},
+     pdfview = {FitH},
+     pdffitwindow = {true}
+}
+
+
+% Quellcode Formatierung
+\usepackage{listings}
+\lstset{%
+    language=Python, % Programmiersprache
+    numbers=left, % Zeilennummern
+    stepnumber=1, % jede Zeile
+    numbersep=5pt, % Abstand zum Quellcode
+    numberstyle=\tiny, % SchriftgrÃ¶Ãe
+    breaklines=true, % ZeilenumbrÃ¼che zulassen
+    breakautoindent=true, % EinrÃ¼cken nach Umbruch
+    tabsize=2,  % Tabulator
+    basicstyle=\footnotesize, %
+    showspaces=false, % Leerzeichen anzeigen (true -> underscore)
+    showstringspaces=false, % Leerzeichen in Strings
+    backgroundcolor=\color{ListingBG}, % Hintergrundfarbe
+    captionpos=b,   % Position der Beschreibung (b: bottom)
+    %keywordstyle=\color{red}\bfseries
+}
+
+\usepackage{setspace}       % Zeilenabstand einstellbar
+\onehalfspacing             % eineinhalbzeilig einstellen
+\usepackage{scrpage2}       % Kopf und Fusszeilen-Layout 
+
+
+\renewcommand{\headfont}{\normalfont\sffamily}    % Kolumnentitel serifenlos
+\renewcommand{\pnumfont}{\normalfont\sffamily}    % Seitennummern serifenlos
+\pagestyle{scrheadings}
+\ihead[]{\headmark}              % Kolumnentitel immer oben innen
+\ohead[\pagemark]{\pagemark}     % Seitennummern immer oben aussen
+\ofoot[]{}                       % Seitennummern in der Fusszeile loeschen
+
+\renewcommand{\bibname}{Literatur} % Literaturverzeichnis wird zu Literatur
+\renewcommand{\figurename}{Abb.}   % Abbildung wird zu Bild
+
+% erweiterte Tabellen
+\usepackage{array}
+
+% Formelsatz
+\usepackage{amsmath}
+
+% Definition eigener Operatoren (im Header)
+\DeclareMathOperator{\rg}{Rang}  
+
+% Fortlaufende KapitelÃ¼berschriften in der Kopfzeile
+%\pagestyle{headings}
+
+% Stil des Literaturverzeichnis
+\bibliographystyle{alphadin}
+
+%text im Literaturverzeichnis
+\setbibpreamble{Auflistung aller Quellen, die zum erstellen dieses Dokumentes verwendet wurden.\par\bigskip}
